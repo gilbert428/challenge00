@@ -4,18 +4,18 @@
 
 #Declaring constant
 sub_total = 5.00
-GST_RATE = 0.05
-PST_RATE = 0.07
+GST_RATE = 5.0
+PST_RATE = 7.0
 
 # Calculate the taxes
-gst_amount = sub_total * GST_RATE
-pst_amount = sub_total * PST_RATE
+gst_amount = sub_total * GST_RATE/100
+pst_amount = sub_total * PST_RATE/100
 
 # Calculate the grand total
 grand_total = sub_total + gst_amount + pst_amount
 
 # Display the breakdown and grand total
-puts "Subtotal: $%.2f" % sub_total
-puts "PST: $%.2f - %.0f%%" % [pst_amount, PST_RATE * 100]
-puts "GST: $%.2f - %.0f%%" % [gst_amount, GST_RATE * 100]
-puts "Grand Total: $%.2f" % grand_total
+puts "Subtotal:  $#{sub_total}"
+puts "PST: $#{pst_amount}% - $#{PST_RATE}%"
+puts "GST: $#{gst_amount}% -$#{GST_RATE}%"
+puts "Grand Total: $#{grand_total}"
